@@ -20,8 +20,17 @@ jobs:
       - name: Install dependencies
         run: flutter pub get
 
-      - name: Dart/Flutter Format
-        run: dart format --set-exit-if-changed .
+      # Step 1: Auto-format code (optional)
+      - name: Auto-format code
+        run: dart format .
+
+      # Step 2: Check formatting and fail if unformatted
+      - name: Check code formatting
+        run: |
+          if ! dart format --set-exit-if-changed . ; then
+            echo "❌ Code is not formatted properly. Please run 'dart format .' locally."
+            exit 1
+          fi
 
       - name: Flutter Analyze
         run: flutter analyze
