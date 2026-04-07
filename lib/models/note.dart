@@ -3,7 +3,6 @@ class Note {
   final String title;
   final String content;
   final DateTime timestamp;
-  dsk
 
   Note({
     required this.id,
