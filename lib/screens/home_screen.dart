@@ -10,13 +10,12 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  // In-memory list to store notes
   final List<Note> _notes = [];
 
   void _addNote(Note note) {
     setState(() {
       _notes.add(note);
-      // Sort notes so the newest is at the top
+
       _notes.sort((a, b) => b.timestamp.compareTo(a.timestamp));
     });
   }
