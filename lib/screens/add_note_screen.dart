@@ -22,7 +22,6 @@ class _AddNoteScreenState extends State<AddNoteScreen> {
       return;
     }
 
-    // Creating a very simple Note object to return to the previous screen
     final newNote = Note(
       id: const Uuid().v4(),
       title: _titleController.text.trim(),
